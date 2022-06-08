@@ -30,7 +30,7 @@ export class AcercaDeService {
 
 // /*
   public getUsuario():Observable<Usuario>{
-    return this.http.get<Usuario>(`${this.apiServerUrl}/usuario/id`);
+    return this.http.get<Usuario>(`${this.apiServerUrl}/usuario/id/1`);
 
   }
 
