@@ -1,0 +1,32 @@
+
+
+img {
+
+    
+
+    
+    
+    padding: 30px;
+
+
+    width: 50%;
+    border-radius: 40%;
+    box-shadow: 5px 5px 5px grey;
+    left: 3%;
+    top: 300px;
+   
+  
+  }
+  
+  div {
+     display: grid;
+     place-items: center;    
+        background: #316bb3;
+        
+    
+    
+    
+   }
+  
+  
+  

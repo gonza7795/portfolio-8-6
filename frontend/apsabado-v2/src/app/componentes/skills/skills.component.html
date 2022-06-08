@@ -1,0 +1,416 @@
+
+<div id="azul" class="row">
+    <h1 ></h1>
+  </div>
+    <div id="azul"   class="text-center">
+        
+    <div class="container">
+  
+     
+    <h2 class="font-italic text-center">Skills</h2>
+    <img id="skills-img" src="../../../assets/skills-logo.png" alt="" class="center" class="img-fluid" >
+  
+    </div>
+  
+        
+  
+        <div class="col-lg-9">
+  
+     
+  <div  *ngFor="let skills of skillss">
+  
+    <div class="row text-center">
+  
+     
+  
+      <div class="row">
+      
+        <div class="col-lg-3">
+          <img src="{{skills.fotoSkill}}" class="img-fluid" id="logo-array-img">
+      </div>
+
+      <div class="text-center col-sm-3 col-md-2 col-lg-2">
+        <h3 class="text-light">{{skills.nombreSkill}}</h3>
+
+       </div>
+
+
+          
+          <div class="text-center col-sm-12 col-md-4 col-lg-4">
+
+            <!--
+
+            <circle-progress
+      [percent]="52"
+      [radius]="100"
+      [outerStrokeWidth]="16"
+      [innerStrokeWidth]="8"
+      [outerStrokeColor]="'#dee1e4'"
+      [innerStrokeColor]="'#dee1e4'"
+      [animation]="true"
+      [animationDuration]="1000"
+    
+    
+      [titleColor] = "'white'"
+      [titleFontSize] = "'3em'"
+    
+      [subtitleColor] = "'white'"
+      [subtitleFontSize] = "'1em'"
+      [subtitle] = "'porcentaje'"
+      [unitsColor] = "'white'"
+    
+     
+      
+    
+    
+     
+       
+    
+    ></circle-progress>  
+    
+    -->
+
+    
+    <div class="progress">
+      <div class="progress-bar bg-danger" 
+      role="progressbar" 
+      style="width: {{skills.porcentaje}}%;"
+       aria-valuenow="{skills.porcentaje}" 
+       aria-valuemin="0" 
+       aria-valuemax="100">{{skills.porcentaje}}%
+      </div>
+    </div>
+
+             
+          </div>
+      
+      </div>
+
+
+      
+  
+  
+  </div>
+      
+      
+      <!---->
+      
+      
+          
+         
+          
+            
+          
+              <div class="col text-center" class="col-6">
+          
+               
+                   <!-- Button trigger modal editar-->
+          <button
+           type="button"
+            class="btn btn-secondary" 
+            data-bs-toggle="modal" 
+            data-bs-target="#editSkillsModal"
+            (click)="onOpenModal('edit',skills)"
+            >
+            Editar registro
+           </button>
+           
+           <!-- Button trigger modal borrar registro  -->
+                  <button
+                  (click)="onOpenModal('delete',skills)"
+                  class="btn btn-danger"
+                  data-bs-toggle="modal" 
+                  data-bs-target="#deleteSkillsModal"
+                  data-oringal-title="Delete"
+                  >Borrar registro
+          
+                </button>
+          
+              </div>
+          
+          
+            </div>
+          
+          
+              
+          
+          
+          
+          <!-- Modal añadir education-->
+          
+          <!-- Modal -->
+          <!-- Modal -->
+          <!-- Button trigger modal añadir educ -->
+          <button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#addSkillsModal" >
+              Añadir otro registro de Skills
+            </button>
+            
+            <!-- Modal añadir educacion-->
+            <div class="modal fade" id="addSkillsModal" tabindex="-1" aria-labelledby="addSkillsModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="addSkillsModalLabel">Añadir Skill</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+          
+          
+          
+                      <form #addForm="ngForm" (ngSubmit)="onAddSkills(addForm)">
+                          <div class="form-group">
+                              <label for="tituloExp"> Nombre Skill </label>   
+                                <input type="text"
+                                ngModel
+                                name="nombreSkill"
+                                class="form-control"
+                                id="nombreSkill"
+                                placeholder="Nombre"
+                                required
+                                >                   
+                          </div>
+          
+                          <div class="form-group">
+                              <label for="fechaExp"> porcentaje de skill  </label>   
+                                <input type="number"
+                                ngModel
+                                name="porcentaje"
+                                class="form-control"
+                                id="porcentaje"
+                                placeholder="porcentaje"
+                                required
+                                >                   
+                          </div>
+          
+                      
+          
+                          <div class="form-group">
+                              <label for="fotoSkill"> URL de la imágen del Skill</label>   
+                                <input type="text"
+                                ngModel
+                                name="fotoSkill"
+                                class="form-control"
+                                id="fotoSkill"
+                                placeholder="URL de la imágen en formato 'https://.."
+                                required
+                                >                   
+                          </div>
+          
+                          <div class="modal-footer">
+                            
+          
+                              <button
+                              [disabled]="addForm.invalid"
+                              type="submit"
+                              class="btn btn-primary"
+                              >
+                              Agregar Cambios
+          
+                              </button>
+  
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                          </div>
+          
+          
+          
+                      </form>
+          
+                    
+                      
+          
+          
+          
+                  </div>
+                  <div class="modal-footer">
+          
+                      <p><strong>Gonzalo Alvarez </strong> Profile </p>
+          
+               
+                    
+                  <!--  <button type="button" class="btn btn-primary">Save changes</button>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+          
+          
+            <!-- Modal editar Skills-->
+          
+          
+          
+          
+            <div class="modal fade" id="editSkillsModal" tabindex="-1" aria-labelledby="editSkillsModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="editSkillsModalLabel">
+                      Editar  ---> {{editSkills?.nombreSkill}}
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+          
+          
+                  <div class="modal-body">
+          
+          
+          
+                      <form #editForm="ngForm">
+                          <div class="form-group">
+                              <label for="name"> Nombre Skill </label>   
+                                <input 
+                                type="text"
+                                ngModel="{{editSkills?.nombreSkill}}"
+                                name="nombreSkill"
+                                class="form-control"
+                                id="nombreSkill"
+                                placeholder="nombreSkill"
+                                
+                                >                   
+                          </div>
+          
+                          <input 
+                          type="hidden"
+                          ngModel="{{editSkills?.idSkill}}"
+                          name="idSkill"
+                          class="form-control"
+                          id="idSkill"
+                          placeholder=""
+                          
+                          >               
+          
+                          <div class="form-group">
+                              <label for="fechaExp"> porcentaje  </label>   
+                                <input type="number"
+                                ngModel="{{editSkills?.porcentaje}}"
+                                name="porcentaje"
+                                class="form-control"
+                                id="porcentaje"
+                                placeholder="porcentaje"
+                                
+                                >                   
+                          </div>
+          
+                         
+          
+                          <div class="form-group">
+                              <label for="fotoSkill"> URL de la imágen del Skill</label>   
+                                <input type="text"
+                                ngModel="{{editSkills?.fotoSkill}}"
+                                name="fotoSkill"
+                                class="form-control"
+                                id="fotoSkill"
+                                placeholder="URL de la imágen en formato 'https://.."
+                                required
+                                >                   
+                          </div>
+          
+                          <div class="modal-footer">
+                            
+          
+                              <button
+                              (click)="onUpdateSkills(editForm.value)"
+          
+                              data-bs-dismiss="modal"
+                              
+                              class="btn btn-primary"
+                              >
+                              Guardar Cambios
+          
+                              </button>
+  
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                          </div>
+          
+          
+          
+                      </form>
+          
+                    
+                      
+          
+          
+          
+                  </div>
+                  <div class="modal-footer">
+          
+                      <p><strong>Gonzalo Alvarez </strong> Profile </p>
+          
+                    
+                    
+                  <!--  <button type="button" class="btn btn-primary">Save changes</button>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+          
+          
+            <!-- Modal borrar Skills-->
+          
+          
+          
+          
+            <div class="modal fade" id="deleteSkillsModal" tabindex="-1" aria-labelledby="deleteSkillsModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="deleteSkillsModalLabel">
+                      Borrar registro ---> {{editSkills?.nombreSkill}}
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+          
+          
+                  <div class="modal-body">
+          
+          
+          
+                     <p> ¿Está seguro de borrar el registro de
+                     {{deleteSkills?.nombreSkill}} ?
+                    </p>
+          
+          
+                  </div>
+          
+          
+          
+                    <div class="modal-footer">
+          
+          
+          
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+                      No
+                    </button>          
+          
+          
+                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+                     (click)="onDeleteSkills(deleteSkills!.idSkill)">
+                     Sí, borrar
+                    </button>
+          
+          
+                  </div>
+          
+                    
+                      
+          
+          
+          
+                  
+                  
+          
+                      <p><strong>Gonzalo Alvarez </strong> Profile </p>
+          
+                   
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+          
+          
+          
+          
+  
