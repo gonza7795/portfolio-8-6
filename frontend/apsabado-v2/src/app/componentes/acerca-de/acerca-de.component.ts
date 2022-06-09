@@ -15,10 +15,10 @@ import { AcercaDeService } from 'src/app/servicios/acerca-de.service';
 })
 export class AcercaDeComponent implements OnInit {
 
-  public usuarios: Usuario | undefined;
+  public usuario: Usuario | undefined;
 
   public editUsuario: Usuario | undefined;
-  //public deleteEducation: Education | undefined;
+ 
 
 
 
@@ -28,7 +28,7 @@ export class AcercaDeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.getUsuarios();
+    this.getUsuario();
 
 
   }
@@ -38,10 +38,10 @@ export class AcercaDeComponent implements OnInit {
 
   
  
-  public getUsuarios():void {
+  public getUsuario():void {
     this.acercaDeService.getUsuario().subscribe({
       next:(Response: Usuario) =>  {
-        this.usuarios=Response;
+        this.usuario=Response;
       },
       error:(error:HttpErrorResponse)=>{
         alert(error.message);
@@ -88,7 +88,7 @@ export class AcercaDeComponent implements OnInit {
        this.acercaDeService.updateUsuario(usuario).subscribe({
        next: (response:Usuario) => {
          console.log(response);
-         this.getUsuarios();
+         this.getUsuario();
 
          
                },
