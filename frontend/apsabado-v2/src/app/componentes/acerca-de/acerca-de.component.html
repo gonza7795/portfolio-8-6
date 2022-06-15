@@ -25,11 +25,7 @@
 
         
 
-
-           
-
-
-        
+            
 
 
           
@@ -52,6 +48,165 @@
     
     </span>
     </div>
+
+
+    <div class="col text-center" class="col-6">
+
+     
+      <!-- Button trigger modal editar  -->
+<button
+type="button"
+class="btn btn-secondary" 
+data-bs-toggle="modal" 
+data-bs-target="#editusuarioModal"
+(click)="onOpenModal('edit',usuario)"
+>
+Editar información personal
+</button>
+
+
+
+ </div>
+
+
+
+
+</div>
+
+
+
+
+ <!-- Modal editar usuario-->
+
+
+
+ <div class="modal fade" 
+ id="editUsuarioModal"
+  tabindex="-1" 
+  aria-labelledby="editUsuarioModalLabel"
+   aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editUsuarioModalLabel">
+          Editar información personal 
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      
+
+      <div class="modal-body">
+
+
+          <form #editForm="ngForm">
+              <div class="form-group">
+                  <label for="name"> Nombre </label>   
+                    <input 
+                    type="text"
+                    ngModel="{{editUsuario?.nombre}}"
+                    name="nombre"
+                    class="form-control"
+                    id="nombre"
+                    placeholder="Nombre"
+                    
+                    >                   
+              </div>
+
+              <input 
+              type="hidden"
+              ngModel="{{editUsuario?.id}}"
+              name="id"
+              class="form-control"
+              id="id"
+              placeholder=""
+              
+              >               
+
+              <div class="form-group">
+                  <label for="apellido"> Apellido </label>   
+                    <input type="text"
+                    ngModel="{{editUsuario?.apellido}}"
+                    name="apellido"
+                    class="form-control"
+                    id="apellido"
+                    placeholder="Apellido"
+                    
+                    >                   
+              </div>
+
+
+              <div class="form-group">
+                <label for="titulo"> Título </label>   
+                  <input type="text"
+                  ngModel="{{editUsuario?.titulo}}"
+                  name="titulo"
+                  class="form-control"
+                  id="titulo"
+                  placeholder="Título"
+                  
+                  >                   
+            </div>
+
+              <div class="form-group">
+                  <label for="descripcion"> Descripción </label>   
+                    <input type="text"
+                    ngModel="{{editUsuario?.descripcion}}"
+                    name="descripcion"
+                    class="form-control"
+                    id="descripcion"
+                    placeholder="Descripcion"
+                    required
+                    >                   
+              </div>
+
+              <div class="form-group">
+                  <label for="fotoPerfil"> URL de la imágen del perfil</label>   
+                    <input type="text"
+                    ngModel="{{editUsuario?.fotoPerfil}}"
+                    name="fotoPerfil"
+                    class="form-control"
+                    id="fotoPerfil"
+                    placeholder="URL de la imágen en formato 'https://.."
+                    required
+                    >                   
+              </div>
+
+              <div class="modal-footer">
+                
+
+                  <button
+                  (click)="onUpdateUsuario(editForm.value)"
+
+                  data-bs-dismiss="modal"
+                  
+                  class="btn btn-success"
+                  >
+                  Guardar Cambios
+
+                  </button>
+
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+
+
+          </form>
+
+        
+          
+
+
+      </div>
+      <div class="modal-footer">
+
+          <p><strong>Gonzalo Alvarez </strong> Profile </p>
+
+       
+        
+  
+      </div>
+    </div>
+  </div>
 </div>
 
 

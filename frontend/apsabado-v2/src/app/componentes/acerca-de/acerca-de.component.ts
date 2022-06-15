@@ -55,23 +55,20 @@ export class AcercaDeComponent implements OnInit {
   public onOpenModal(mode: string, usuario?: Usuario):void {
 
     const container=document.getElementById('main-container');
-
     const button=document.createElement('button');
-
+    button.type = 'button';
     button.style.display='none';
+    button.setAttribute('data-toogle', 'modal');    
+    
 
-
-    button.setAttribute('data-toogle', 'modal');
-
-
-
-   
 
     if (mode==='edit')  {
       this.editUsuario=usuario;
       button.setAttribute('data-target','#editUsuarioModal');
 
     }
+
+    
 
     container?.appendChild(button);
     button.click();
@@ -82,9 +79,9 @@ export class AcercaDeComponent implements OnInit {
    
 
 
-      public onUpdateUsuario(usuario: Usuario)
-      {this.editUsuario=usuario;
-       document.getElementById('add-usuario-form')?.click();
+      public onUpdateUsuario(usuario: Usuario): void {
+      this.editUsuario=usuario;
+       
        this.acercaDeService.updateUsuario(usuario).subscribe({
        next: (response:Usuario) => {
          console.log(response);
@@ -95,8 +92,10 @@ export class AcercaDeComponent implements OnInit {
                error:(error:HttpErrorResponse)=>{
                 alert(error.message);
                
-              }
-           })
+              },
+           });
+
+          }
        }
 
 
@@ -105,4 +104,4 @@ export class AcercaDeComponent implements OnInit {
 
 
 
-}
+
