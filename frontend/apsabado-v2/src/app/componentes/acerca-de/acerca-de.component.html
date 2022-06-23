@@ -21,7 +21,7 @@
 
         <!-- para usar la base d datos .json -->
        <!--     <h3 id="nombre" >Gonzalo Alvarez</h3>-->
-       <h3 id="nombre" > {{usuario.nombre}} {{usuario.apellido}}</h3> 
+       <h3 id="nombreCompleto" > {{usuario.nombre}} {{usuario.apellido}}</h3> 
         
        
 
@@ -78,29 +78,112 @@ Editar Información sobre {{usuario.nombre}} {{usuario.apellido}}</button>
 </div>
 
 <!-- Modal editar -->
-<div class="modal fade" id="editUsuarioModal" tabindex="-1" aria-labelledby="editUsuarioModalLabel" aria-hidden="true" *ngIf="usuario">
+<div class="modal fade" id="editUsuarioModal" tabindex="-1" aria-labelledby="editUsuarioModalLabel" aria-hidden="true" >
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="editUsuarioModalLabel">Editar Información sobre el Usuario   {{usuario.nombre}} {{usuario.apellido}} </h5>
+        <h5 class="modal-title" id="editUsuarioModalLabel">Editar Información sobre el Usuario   </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
 
 
-        <form #editForm="ngForm" *ngIf="usuario">
-          <div class="form-group">
-              <label for="name"> Nombre</label>   
-                <input 
-                type="text"
-                ngModel="{{editUsuario?.nombre}}"
-                name="nombre"
-                class="form-control"
-                id="nombre"
-                placeholder={{usuario.nombre}}
-                
-                >                   
-          </div>
+        <form #editForm="ngForm" >
+        
+
+          <input
+          type="hidden"
+          ngModel="{{ editUsuario?.id }}"
+          name="id"
+          class="form-control"
+          id="id"
+          placeholder=""
+        />
+
+
+
+        <div class="form-group">
+          <label for="nombre"> Nombre</label>   
+            <input 
+            type="text"
+            ngModel="{{editUsuario?.nombre}}"
+            name="nombre"
+            class="form-control"
+            id="nombre"
+            placeholder="Nombre"
+            
+            >                   
+      </div>
+
+
+     
+
+
+        <div class="form-group">
+          <label for="apellido"> Apellido</label>   
+            <input 
+            type="text"
+            ngModel="{{editUsuario?.apellido}}"
+            name="apellido"
+            class="form-control"
+            id="apellido"
+            placeholder="apellido"
+            
+            >                   
+      </div>
+
+
+    
+
+
+  
+
+
+      <div class="form-group">
+        <label for="fotoPerfil"> URL de foto de Perfil</label>   
+          <input 
+          type="text"
+          ngModel="{{editUsuario?.fotoPerfil}}"
+          name="fotoPerfil"
+          class="form-control"
+          id="fotoPerfil"
+          placeholder="fotoPerfil"
+          
+          >                   
+    </div>
+
+
+
+    
+    <div class="form-group">
+      <label for="titulo"> Título</label>   
+        <input 
+        type="text"
+        ngModel="{{editUsuario?.titulo}}"
+        name="titulo"
+        class="form-control"
+        id="titulo"
+        placeholder="titulo"
+        
+        >                   
+  </div>
+
+
+
+    <div class="form-group">
+      <label for="descripcion"> Descripción</label>   
+        <input 
+        type="text"
+        ngModel="{{editUsuario?.descripcion}}"
+        name="descripcion"
+        class="form-control"
+        id="descripcion"
+        placeholder="incluya la descripcion"
+        
+        >                   
+  </div>
+
+
 
 
 
