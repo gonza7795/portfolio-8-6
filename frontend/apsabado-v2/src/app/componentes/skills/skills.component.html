@@ -11,10 +11,13 @@
     <img id="skills-img" src="../../../assets/skills-logo.png" alt="" class="center" class="img-fluid" >
   
     </div>
+
+
+    <div class="col-lg-1"></div>
   
         
   
-        <div class="col-lg-9">
+        <div class="col-lg-11">
   
      
   <div  *ngFor="let skills of skillss">
@@ -141,9 +144,14 @@
           <!-- Modal -->
           <!-- Modal -->
           <!-- Button trigger modal añadir educ -->
-          <button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#addSkillsModal" >
+
+         <div class="container">
+          
+          <button type="button" class="btn btn-success btn-lg " data-bs-toggle="modal" data-bs-target="#addSkillsModal" >
               Añadir otro registro de Skills
             </button>
+
+          </div>
             
             <!-- Modal añadir educacion-->
             <div class="modal fade" id="addSkillsModal" tabindex="-1" aria-labelledby="addSkillsModalLabel" aria-hidden="true">
