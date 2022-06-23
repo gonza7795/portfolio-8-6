@@ -56,17 +56,22 @@ export class AcercaDeComponent implements OnInit {
 
     const container=document.getElementById('main-container');
     const button=document.createElement('button');
-    button.type = 'button';
+   // button.type = 'button';
     button.style.display='none';
     button.setAttribute('data-toogle', 'modal');    
     
-
-
+    
     if (mode==='edit')  {
       this.editUsuario=usuario;
       button.setAttribute('data-target','#editUsuarioModal');
 
     }
+
+
+  
+      
+
+    
 
     
 
