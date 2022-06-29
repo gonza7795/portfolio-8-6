@@ -1,4 +1,10 @@
+#azul {
 
+    padding-bottom: 50px;
+    background: #316bb3;
+
+
+}
        
    
    
@@ -17,9 +23,7 @@
 
 } 
 
-#azul {
-    background: #316bb3;
-}
+
 
 
 
@@ -81,6 +85,17 @@ h1, h3 {
         top: 600px;
     }
 }
+
+
+#espacio-abajo-azul {
+
+    padding-bottom: 70px;
+    background: #316bb3;
+    padding-top: 100px;
+
+
+}
+
 
 
 
