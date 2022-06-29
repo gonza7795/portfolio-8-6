@@ -39,7 +39,7 @@ h1, h3 {
 @media (min-width: 992px) {
    #logo-array-img {
         
-        width: 200%;
+        width: 40%;
         border-radius: 100%;
         box-shadow: 5px 5px 5px grey;
         left: 3%;
