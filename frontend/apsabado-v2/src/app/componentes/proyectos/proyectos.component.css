@@ -32,38 +32,50 @@ h1, h3 {
 
 
 
-
+/* grande */
 @media (min-width: 992px) {
-   #logo-array-img {
+   #imagen-proyecto-img {
+
+
+    padding-top: 20px;
         
-        width: 100%;
-        border-radius: 100%;
+        width: 900px;
+        border-radius: 10%;
         box-shadow: 5px 5px 5px grey;
         left: 3%;
-        top: 300px;
+        top: 600px;
     }
 }
 
+
+/* mediano */
 @media  (max-width: 991px) and (min-width: 576px)  {
     
-    #logo-array-img {
+    #imagen-proyecto-img {
+
+
+        padding-top: 50px;
+
+      
         
-        width: 15%;
-        border-radius: 100%;
+        width: 600px;
+        border-radius: 10%;
         box-shadow: 5px 5px 5px grey;
         left: 3%;
-        top: 300px;
+        top: 600px;
     }
 
 }
 
 
-
+/* chico */
 @media (max-width: 575px) {
-    #logo-array-img {
+    #imagen-proyecto-img {
+
+        padding-top: 50px;
         
-        width: 20%;
-        border-radius: 100%;
+        width: 400px;
+        border-radius: 10%;
         box-shadow: 5px 5px 5px grey;
         left: 33%;
         top: 600px;

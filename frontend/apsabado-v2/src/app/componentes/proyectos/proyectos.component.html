@@ -7,21 +7,25 @@
         
     <div class="container">
     <h2 class="font-italic">Proyectos</h2>
+   
     <img id="logo-proyecto-img" src="../../../assets/project.png" alt="" class="center" class="img-fluid" >
   
     </div>
+
   
-        <div class="col-lg-1"></div>
   
-        <div class="col-lg-11">
+       
+  
+        <div class="container text-center">
   
      
   <div  *ngFor="let proyectos of proyectoss">
   
     <div class="container text-center">
   
-      <div class="col-lg-1">
-          <img src="{{proyectos.imagenProy}}" class="img-fluid" id="logo-array-img">
+      <div class=" container text-center">
+        
+          <img id="imagen-proyecto-img" src="{{proyectos.imagenProy}}" class="img-fluid"  >
       </div>
   
       <div class="row">
@@ -46,7 +50,7 @@
   
     
   
-      <div class="col text-center" class="col-6">
+      <div class="col text-center" >
   
        
            <!-- Button trigger modal editar Proyectos -->
